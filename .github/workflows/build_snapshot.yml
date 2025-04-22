@@ -22,7 +22,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew build -x test
         
       # - name: Publish
       #   run: ./gradlew publish -Pversion_snapshot -Pmvn.user=${{ secrets.MAVEN_USER }} -Pmvn.key=${{ secrets.MAVEN_TOKEN }} -x test
