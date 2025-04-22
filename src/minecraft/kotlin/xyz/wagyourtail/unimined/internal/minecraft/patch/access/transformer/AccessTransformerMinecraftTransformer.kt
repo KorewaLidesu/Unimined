@@ -76,7 +76,7 @@ interface AccessTransformerMinecraftTransformer : AccessTransformerPatcher, Acce
             project.logger.lifecycle("[Unimined/ForgeTransformer] Using user access transformer $accessTransformer")
             val output = MinecraftJar(
                 baseMinecraft,
-                awOrAt = "at+${accessTransformer!!.toPath().getShortSha1()}"
+                awOrAt = "at+${accessTransformer!!.toPath().toRealPath().getShortSha1()}"
             )
             if (!output.path.exists() || project.unimined.forceReload) {
                 transform(
